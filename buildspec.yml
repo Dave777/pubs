@@ -1,9 +1,21 @@
-version: 0.1
+version: 0.2
 
 phases:
+  install:
+    commands:
+      - echo About to run
+      - echo You can install stuff with npm here
+  pre_build:
+    commands:
+      - echo Installing source NPM dependencies...
+      - echo use npm to install more stuff
   build:
     commands:
-      - echo Nothing to do yet
+      - echo Build started on `date`
+      - echo Compiling the Node.js code
+  post_build:
+    commands:
+      - echo Build completed on `date`
 artifacts:
   files:
     - index.html
